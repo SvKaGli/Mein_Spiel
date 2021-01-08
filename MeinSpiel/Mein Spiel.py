@@ -2,13 +2,13 @@ import pygame
 import sys
 
 pygame.init()
-hintergrund = pygame.image.load("C:/Users/glint/OneDrive/Desktop/MeinSpiel/Grafiken/Hintergrund.jpg")
+hintergrund = pygame.image.load("Grafiken/Hintergrund.jpg")
 fenster = pygame.display.set_mode([600,600])
 uhr = pygame.time.Clock()
 pygame.display.set_caption("Mein Spiel")
 
 
-uff = pygame.mixer.Sound("C:/Users/glint/OneDrive/Desktop/MeinSpiel/Geräusche/Spieler/Uffs.wav")
+spielerschaden = pygame.mixer.Sound("Geräusche/Spieler/Uffs.wav")
 
 class spieler:
     def __init__(self,x,y,geschwindigkeit,richtung):
@@ -17,7 +17,7 @@ class spieler:
         self.y = y
         self.geschwindigkeit = geschwindigkeit
         self.dieRichtung = 0
-        self.spielerbilder = [pygame.image.load("C:/Users/glint/OneDrive/Desktop/MeinSpiel/Grafiken/Figuren/Spieler/Spieler.png"),pygame.image.load("C:/Users/glint/OneDrive/Desktop/MeinSpiel/Grafiken/Figuren/Spieler/SpielerRechts.png"),pygame.image.load("C:/Users/glint/OneDrive/Desktop/MeinSpiel/Grafiken/Figuren/Spieler/SpielerLinks.png"),pygame.image.load("C:/Users/glint/OneDrive/Desktop/MeinSpiel/Grafiken/Figuren/Spieler/SpielerOben.png")]
+        self.spielerbilder = [pygame.image.load("Grafiken/Figuren/Spieler/Spieler.png"),pygame.image.load("Grafiken/Figuren/Spieler/SpielerRechts.png"),pygame.image.load("Grafiken/Figuren/Spieler/SpielerLinks.png"),pygame.image.load("Grafiken/Figuren/Spieler/SpielerOben.png")]
         self.derSpieler = fenster.blit(self.spielerbilder[self.dieRichtung], (self.x,self.y))
     def laufen(self,richtung):
         if richtung == 3:
